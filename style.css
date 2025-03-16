@@ -1,0 +1,200 @@
+/* Base styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  h1 {
+    font-size: 2em;
+    color: #060606;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Grid container styling */
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(15, 80px);
+    grid-template-rows: repeat(6, 80px);
+    gap: 5px;
+    position: relative; /* Set relative positioning */
+    margin-top: 20px;
+  }
+  
+  /* Individual cell styles with transition effects */
+  .cell {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.1s;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Cell hover effect */
+  .cell:hover {
+    background-color: #cbd5e0;
+    transform: scale(1.03);
+  }
+  
+  /* Start and end point styles */
+  .start {
+    background-color: #38a169;
+    box-shadow: 0 0 10px rgba(56, 161, 105, 0.5);
+  }
+  
+  .end {
+    background-color: #e53e3e;
+    box-shadow: 0 0 10px rgba(229, 62, 62, 0.5);
+  }
+  
+  /* Road and blocked path styles */
+  .road {
+    background-color: #3182ce;
+  }
+  
+  .blocked {
+    background-color: #4a5568;
+  }
+  
+  /* Car styling with smooth animation */
+  .car {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
+    transform: scale(1.1);
+  }
+  
+  /* Hospital marker styling */
+  .hospital {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    position: absolute;
+    border-radius: 8px;
+  }
+  
+  /* Path highlighting with subtle animation */
+  .path {
+    background-color: #f6e05e;
+    animation: pulse 1s infinite alternate;
+  }
+  
+  /* Button container and button styles */
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    background-color: #004085;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* Animation for pulsing path */
+  @keyframes pulse {
+    from {
+      background-color: #f6e05e;
+    }
+    to {
+      background-color: #ecc94b;
+    }
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5em;
+    }
+  
+    p {
+      font-size: 1em;
+    }
+  
+    #grid {
+      grid-template-columns: repeat(15, 50px);
+      grid-template-rows: repeat(6, 50px);
+    }
+  
+    .cell {
+      width: 50px;
+      height: 50px;
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 10px 15px;
+      width: 100%;
+    }
+  }
+  
+  
+  .hospital {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+     .path-line {
+            position: absolute;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .path-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ffd700;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 51;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 4px rgba(255, 215, 0, 0.6);
+        }
